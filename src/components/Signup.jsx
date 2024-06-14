@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../appwrite/auth";
 import { login } from "../store/authSlice";
-import Logo from "./Logo";
+import { Input, Logo, Buttons } from "./index";
 
 function Signup() {
   const navigate = useNavigate();
@@ -44,7 +44,41 @@ function Signup() {
         </p>
         {error && <p className="text-red-500 mt-8 text-center">{error}</p>}
 
-        <form onSubmit={handleSubmit(create)} className="mt-8"></form>
+        <form onSubmit={handleSubmit(create)} className="mt-8">
+          <div className="space-x-5">
+            <Input
+              label="Fullname ..."
+              placeholder="Enter Your fullname"
+              {...register("name", { required: true })}
+            />
+
+            <Input
+              label="Email: "
+              type="email"
+              placeholder="Enter your email"
+              {...register("email", {
+                required: true,
+                validate: {
+                  matchPattern: (value) =>
+                    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(
+                      value
+                    ) || "Email must be valid email",
+                },
+              })}
+            />
+            <Input
+              label="Password: "
+              type="password"
+              placeholder="Enter your Password"
+              {...register("password", {
+                required: true,
+              })}
+            />
+            <Buttons type="subbmit" className="w-full">
+              Create Account
+            </Buttons>
+          </div>
+        </form>
       </div>
     </div>
   );

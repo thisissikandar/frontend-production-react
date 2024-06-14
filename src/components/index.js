@@ -7,6 +7,11 @@ import Input from "./Input";
 import Select from "./Select";
 import PostCart from "./PostCart";
 import Buttons from "./Buttons";
+import RTE from "./RTE";
+import Signup from "./Signup";
+import Login from "./Login";
+import Postform from "./post-form/Postform";
+import AuthLayout from "./AuthLayout";
 export {
   Container,
   Header,
@@ -16,5 +21,10 @@ export {
   Input,
   Select,
   PostCart,
+  RTE,
   Buttons,
+  Signup,
+  Login,
+  Postform,
+  AuthLayout
 };
