@@ -17,8 +17,8 @@ const AllPosts = () => {
       <div className="flex flex-wrap">
         <Container>
           {posts.map((post) => (
-            <div className="py-2 w-1/3 " key={post.$id}>
-              <PostCart post={post} />
+            <div className="py-2 w-1/4" key={post.$id}>
+              <PostCart {...post} />
             </div>
           ))}
         </Container>

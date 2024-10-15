@@ -1,5 +1,5 @@
 import { Client, Databases, ID, Query, Storage } from "appwrite";
-import config from "../config/config";
+import config from "../config/config.js";
 
 export class Service {
   client = new Client();
@@ -9,7 +9,7 @@ export class Service {
   constructor() {
     this.client
       .setEndpoint(config.appwriteUrl)
-      .setEndpoint(config.appwriteProjectId);
+      .setProject(config.appwriteProjectId);
     this.databases = new Databases(this.client);
     this.buckets = new Storage(this.client);
   }

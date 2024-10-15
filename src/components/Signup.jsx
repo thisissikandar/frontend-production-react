@@ -28,7 +28,7 @@ function Signup() {
   return (
     <div className="flex items-center justify-center">
       <div
-        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10  border border-black/10`}
+        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
@@ -39,15 +39,15 @@ function Signup() {
           Sign In To your Account
         </h2>
         <p className="mt-2 text-center text-base text-black/60">
-          Don&napos;t have any Account?&nbsp;
+          Already have an account?&nbsp;
           <Link to="/login">Sign in</Link>
         </p>
         {error && <p className="text-red-500 mt-8 text-center">{error}</p>}
 
-        <form onSubmit={handleSubmit(create)} className="mt-8">
-          <div className="space-x-5">
+        <form onSubmit={handleSubmit(create)}>
+          <div className="space-y-5">
             <Input
-              label="Fullname ..."
+              label="Fullname:"
               placeholder="Enter Your fullname"
               {...register("name", { required: true })}
             />

@@ -10,7 +10,7 @@ function Home() {
         setPost(post.documents);
       }
     });
-  }, [post]);
+  }, []);
 
   if (post.length === 0) {
     return (
